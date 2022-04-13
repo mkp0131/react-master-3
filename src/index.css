@@ -1,3 +1,10 @@
+:root {
+  --bg-color: #212121;
+  --font-color: #fff;
+  --box-color: #666;
+  --main-color: rgb(255, 242, 0);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +12,150 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--font-color);
+  font-size: 18px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 569px;
+  margin: 0 auto;
+}
+
+.inner {
+  padding: 0 10px;
+}
+
+form {
+  width: 100%;
+  background: var(--box-color);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--font-color);
+  margin-bottom: 2em;
+}
+form textarea {
+  width: 100%;
+  height: 92px;
+  background: transparent;
+  border: none;
+  resize: none;
+  outline: none;
+  padding: 1em;
+  color: var(--font-color);
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow: hidden;
+}
+form .util {
+  display: grid;
+  grid-template-columns: 100px auto;
+  gap: 1em;
+  /* justify-content: space-between; */
+}
+form .util select {
+  font-size: 1rem;
+  padding: 0.5em;
+  background: transparent;
+  border: none;
+  color: var(--font-color);
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+form .util button[type='submit'] {
+  font-size: 1rem;
+  padding: 0.5em;
+  background: transparent;
+  border: none;
+  color: var(--font-color);
+  outline: none;
+  cursor: pointer;
+  background: var(--bg-color);
+  border-top-left-radius: 10px;
+  font-weight: 700;
+}
+
+.todo-category-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.todo-category-list li button {
+  display: block;
+  text-align: center;
+  padding: 0.5em;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  color: var(--font-color);
+  background: transparent;
+}
+.todo-category-list li.on button {
+  border-color: var(--font-color);
+}
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.todo-list li {
+  border: 1px solid var(--font-color);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1em;
+}
+.todo-list li .todo__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 1em;
+}
+.todo-list li .todo__info .todo__category select {
+  color: var(--main-color);
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.todo-list li .todo__info button {
+  color: red;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.todo-list li .todo__info .todo__status {
+  color: var(--main-color);
+}
+
+.todo-err-msg {
+  text-align: center;
+  color: red;
 }
